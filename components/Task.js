@@ -40,8 +40,11 @@ const clearAll = async () => {
 const getMyObject = async () => {
   try {
     const jsonValue = await AsyncStorage.getItem('@storage')
-    
-    setItemList(JSON.parse(jsonValue))
+    const items = JSON.parse(jsonValue)
+    if (items == null){
+      setObjectValue([{text: 'Новая задача', key: '1', date: Date(2022,4,12)}])
+    }
+    else{setItemList(JSON.parse(jsonValue))}
     return jsonValue != null ? JSON.parse(jsonValue) : null
   } catch(e) {
     // read error
