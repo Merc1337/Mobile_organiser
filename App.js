@@ -18,14 +18,24 @@ export default function App() {
           name="MainPage"
           component={MainPage}
           options={{
-            title: 'Запланированные дела' //Set Header Title
+
+            title: 'Запланированные дела', //Set Header Title
+            headerTintColor: 'white',
+            headerStyle: {
+            backgroundColor: '#7B68EE',
+          },
           }}
         />
         <Stack.Screen
           name="Task"
           component={TaskPage}
           options={{
-            title: 'Task', //Set Header Title
+
+            title: 'Задачи', //Set Header Title
+            headerTintColor: 'white',
+            headerStyle: {
+            backgroundColor: '#7B68EE',
+          }
           }}
         />
       </Stack.Navigator>
