@@ -18,6 +18,7 @@ export default function App() {
           name="MainPage"
           component={MainPage}
           options={{
+
             title: 'Запланированные дела', //Set Header Title
             headerTintColor: 'white',
             headerStyle: {
@@ -29,6 +30,7 @@ export default function App() {
           name="Task"
           component={TaskPage}
           options={{
+
             title: 'Задачи', //Set Header Title
             headerTintColor: 'white',
             headerStyle: {
