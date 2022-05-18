@@ -16,7 +16,6 @@ export default function App({navigation}) {
 
 const setObjectValue = async (value) => {
   try {
-    console.log(value)
     const jsonValue = JSON.stringify(value)
     await AsyncStorage.setItem('@storage', jsonValue)
   } catch(e) {
@@ -40,8 +39,11 @@ const clearAll = async () => {
 const getMyObject = async () => {
   try {
     const jsonValue = await AsyncStorage.getItem('@storage')
-    
-    setItemList(JSON.parse(jsonValue))
+    const items = JSON.parse(jsonValue)
+    if (items == null){
+      setObjectValue([{text: 'Новая задача', key: '1', date: Date(2022,4,12)}])
+    }
+    else{setItemList(JSON.parse(jsonValue))}
     return jsonValue != null ? JSON.parse(jsonValue) : null
   } catch(e) {
     // read error
@@ -50,7 +52,6 @@ const getMyObject = async () => {
   console.log('Done.')
 
 }
-
 
 
   const addHandler = (text) => {
@@ -115,14 +116,11 @@ const getMyObject = async () => {
   }   
   
   global.MainList = itemList
-
   useEffect(() => {
-    try{
-        getMyObject()
-    }
-    catch (e){
-      setObjectValue(itemList)
-    }
+    getMyObject()
+    
+        
+
    
   }, [])
 

@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import { Text, View, StyleSheet, FlatList, Button, TouchableOpacity, ImageBackground } from 'react-native';
 import Constants from 'expo-constants';
@@ -31,11 +30,5 @@ const styles = StyleSheet.create({
     width: '60%',
     marginLeft: '20%',
     color: 'white',
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });

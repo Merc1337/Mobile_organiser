@@ -7,6 +7,8 @@ const Stack = createStackNavigator();
 
 import MainPage from './components/MainPage';
 import TaskPage from './components/Task';
+import TaskCalendar from './components/TaskCalendar';
+import AboutApp from './components/About';
 
 export default function App() {
 
@@ -18,7 +20,6 @@ export default function App() {
           name="MainPage"
           component={MainPage}
           options={{
-
             title: 'Запланированные дела', //Set Header Title
             headerTintColor: 'white',
             headerStyle: {
@@ -30,8 +31,29 @@ export default function App() {
           name="Task"
           component={TaskPage}
           options={{
-
             title: 'Задачи', //Set Header Title
+            headerTintColor: 'white',
+            headerStyle: {
+            backgroundColor: '#7B68EE',
+          }
+          }}
+        />
+        <Stack.Screen
+          name="TaskCalendar"
+          component={TaskCalendar}
+          options={{
+            title: 'Календарь', //Set Header Title
+            headerTintColor: 'white',
+            headerStyle: {
+            backgroundColor: '#7B68EE',
+          }
+          }}
+        />
+        <Stack.Screen
+          name="About"
+          component={AboutApp}
+          options={{
+            title: 'О приложении', //Set Header Title
             headerTintColor: 'white',
             headerStyle: {
             backgroundColor: '#7B68EE',
@@ -58,3 +80,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+

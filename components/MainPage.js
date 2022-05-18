@@ -8,7 +8,7 @@ import { Feather, Ionicons, FontAwesome5 } from '@expo/vector-icons';
 export default function App({navigation}) {
   return(
   <View style={styles.main}>
-  <ImageBackground source={require('../back.jpg')} resizeMode='cover' style={{width: '100%', height: '100%'}}>
+  <ImageBackground source={require('../back.jpg')} resizeMode='cover' style={{width: '100%', height: '100%', justifyContent: 'center'}}>
   <TouchableOpacity
   style={styles.button}
   onPress={() => navigation.navigate('Task')} >
