@@ -16,7 +16,6 @@ export default function App({navigation}) {
 
 const setObjectValue = async (value) => {
   try {
-    console.log(value)
     const jsonValue = JSON.stringify(value)
     await AsyncStorage.setItem('@storage', jsonValue)
   } catch(e) {
@@ -53,7 +52,6 @@ const getMyObject = async () => {
   console.log('Done.')
 
 }
-
 
 
   const addHandler = (text) => {
@@ -118,14 +116,11 @@ const getMyObject = async () => {
   }   
   
   global.MainList = itemList
-
   useEffect(() => {
-    try{
-        getMyObject()
-    }
-    catch (e){
-      setObjectValue(itemList)
-    }
+    getMyObject()
+    
+        
+
    
   }, [])
 
